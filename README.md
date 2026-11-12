@@ -1,29 +1,20 @@
-# Data-Driven Insights into Walmart Sales
+# Walmart Weekly Sales Analysis
 
+An exploratory Python analysis of weekly store sales. The project compares store-level sales distributions, examines holiday and regular weeks, and checks associations with temperature, fuel price, and CPI.
 
-The code provided is a project on the data analysis of Walmart monthly sales. The goal of this project is to understand the trends in Walmart sales and to identify factors that influence sales.
+[Open the analysis notebook](walmart-weekly-sales.ipynb) to see editable charts and the data checks. The saved charts use a small, fictional dataset to illustrate the workflow. Supply your own compatible CSV to run the notebook with observed sales.
 
-Data
+## Run the notebook
 
-The data used in this project is from the Walmart Open Data Challenge. The data includes weekly sales data for Walmart stores across the United States, as well as data on temperature, fuel price, CPI, and unemployment.
+Install Python 3 and the notebook dependencies.
 
-Methodology
+```bash
+python -m pip install jupyterlab pandas numpy matplotlib
+jupyter lab walmart-weekly-sales.ipynb
+```
 
-The following steps were taken to analyze the data:
+Set `INPUT_CSV` to a local file with one row per store and week. Required columns are `Store`, `Date`, `Weekly_Sales`, and `Holiday_Flag` (0 or 1). The notebook also uses `Temperature`, `Fuel_Price`, and `CPI` when available. The original CSV referenced by the legacy script is unavailable in this repository.
 
-1. Exploratory data analysis: This involved summarizing the data and creating visualizations to understand the overall trends and patterns in the data.
-2. Hypothesis testing: This involved using statistical tests to test hypotheses about the relationship between sales and other factors, such as temperature, fuel price, and CPI.
-3. Forecasting: This involved using machine learning models to forecast future sales.
+The notebook compares mean weekly sales within each store and reports the number of observations behind each comparison. Holiday patterns and correlations are descriptive. Store and time effects can influence these comparisons.
 
-Results
-
-The following are some of the key findings from the analysis:
-
-1. Weekly sales vary significantly across stores.
-2. Weekly sales are higher during holiday weeks.
-3. Weekly sales are positively correlated with temperature and negatively correlated with fuel price.
-4. There is a statistically significant difference in sales between holiday and non-holiday weeks.
-
-Conclusion
-
-This project provides valuable insights into the trends in Walmart sales and the factors that influence sales. This information can be used by Walmart to make informed decisions about pricing, marketing, and inventory management.
+The [original script](walmartanalysis.py) preserves the earlier pandas, Seaborn, Matplotlib, and SciPy analysis.
